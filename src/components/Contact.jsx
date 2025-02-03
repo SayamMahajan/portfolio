@@ -4,6 +4,9 @@ import React, { useRef, lazy, Suspense, useEffect } from "react";
 const Lottie = lazy(() => import("lottie-react"));
 import ContactAnimation from "../assets/Contact.json";
 
+// Import emailjs from the new package
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
   const form = useRef();
 
@@ -16,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const emailjs = await import("emailjs-com");
+      // Send the email using the new package
       await emailjs.sendForm(
         "service_3ljaq2m", 
         "template_a228wfs", 
