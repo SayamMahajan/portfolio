@@ -1,5 +1,6 @@
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { HashRouter as Router } from "react-router-dom"; // Add this import
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ParticleBg from "./components/Particle";
@@ -12,7 +13,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <Router>
       <ParticleBg />
       <Navbar />
       <Hero />
@@ -24,7 +25,7 @@ function App() {
       <Certificates />
       <Contact />
       <Footer />
-    </>
+    </Router>
   );
 }
 
