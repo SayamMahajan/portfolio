@@ -7,16 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
+        manualChunks: {
+          "lottie-chunk": ["lottie-react"],
+          "emailjs-chunk": ["emailjs-com"],
         },
       },
     },
-  },
-  server: {
-    historyApiFallback: true, // Ensures React routes work
   },
 });
 

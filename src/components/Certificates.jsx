@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Lottie from 'lottie-react'
-import Certificate from '../assets/Certificate.json'
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import CertificateAnimation from "../assets/Certificate.json";
+
+const Lottie = lazy(() => import("lottie-react"));
 
 const Certificates = () => {
   const certificates = [
     {
-      title: "Google- The Bites and Bytes of Networking",
+      title: "Google - The Bites and Bytes of Networking",
       image: "/images/bits.png",
     },
     {
-      title: "NPTEL- Cloud Computing",
+      title: "NPTEL - Cloud Computing",
       image: "/images/nptel.png",
     },
     {
-      title: "Udemy- Mastering Data Structures & Algorithms using C and C++",
+      title: "Udemy - Mastering Data Structures & Algorithms using C and C++",
       image: "/images/dsa.png",
     },
   ];
@@ -46,14 +47,6 @@ const Certificates = () => {
     setTimeout(() => setIsPaused(false), 5000);
   };
 
-  const handleShowCertificate = () => {
-    setShowCertificateModal(true);
-  };
-
-  const handleCloseCertificate = () => {
-    setShowCertificateModal(false);
-  };
-
   return (
     <div className="relative" id="certificates">
       <div className="bg-gray-100 py-12">
@@ -70,7 +63,7 @@ const Certificates = () => {
                   className={`transition-transform duration-300 ${isPaused ? "paused" : ""}`}
                   style={{
                     transform: `translateX(-${currentIndex * 100}%)`,
-                    display: 'flex',
+                    display: "flex",
                   }}
                   onClick={pauseScrolling}
                 >
@@ -79,7 +72,6 @@ const Certificates = () => {
                       key={index}
                       className="flex-shrink-0 w-full flex flex-col items-center"
                       style={{ width: "100%" }}
-                      onClick={handleShowCertificate}
                     >
                       <h4 className="text-2xl font-semibold text-gray-600">
                         {certificate.title}
@@ -110,29 +102,12 @@ const Certificates = () => {
                 </button>
               </div>
             </div>
-            <Lottie animationData={Certificate} className='w-[350px] mx-auto lg:w-[500px]'/>
+            <Suspense fallback={<div>Loading Animation...</div>}>
+              <Lottie animationData={CertificateAnimation} className="w-[350px] mx-auto lg:w-[500px]" />
+            </Suspense>
           </div>
         </div>
       </div>
-      {showCertificateModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="relative bg-white rounded-lg p-6 max-w-lg w-full shadow-xl">
-            <button
-              onClick={handleCloseCertificate}
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-lg font-bold"
-            >
-              ✕
-            </button>
-            <div className="text-center">
-              <img
-                src={certificates[currentIndex].image}
-                alt={certificates[currentIndex].title}
-                className="w-full rounded-md"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
