@@ -1,0 +1,13 @@
+<!-- Placeholder for AWS Solutions Architect Associate certificate image -->
+<!-- This would be replaced with the actual certificate image -->
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#FF9900"/>
+  <rect x="20" y="20" width="360" height="260" fill="white" stroke="#FF9900" stroke-width="2"/>
+  <text x="200" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#232F3E">AWS Certified</text>
+  <text x="200" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#232F3E">Solutions Architect</text>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#232F3E">Associate</text>
+  <circle cx="200" cy="180" r="40" fill="#FF9900"/>
+  <text x="200" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">AWS</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#232F3E">Sayam Mahajan</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">2024</text>
+</svg>
