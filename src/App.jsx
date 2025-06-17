@@ -1,12 +1,12 @@
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { HashRouter as Router } from "react-router-dom"; // Add this import
+import { HashRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Hero from "./components/Hero/Hero";
 import ParticleBg from "./components/Particle";
 import About from "./components/About";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
+import Projects from "./components/Projects/Projects";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
