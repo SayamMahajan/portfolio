@@ -3,14 +3,14 @@ import { ExternalLink, Github } from 'lucide-react'
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className='bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-[400px] transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-200'>
+    <div className='bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden w-full max-w-[400px] transform hover:scale-105 transition-all duration-300 hover:shadow-purple-500/25 border border-white/20'>
       <div className='relative overflow-hidden group'>
         <img 
           src={project.image} 
           alt={project.title} 
           className='w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110'
         />
-        <div className='absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300'></div>
+        <div className='absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'></div>
         
         {/* Overlay with links */}
         <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -19,7 +19,7 @@ const ProjectCard = ({ project }) => {
               href={project.github} 
               target='_blank' 
               rel="noopener noreferrer"
-              className='bg-white/90 p-3 rounded-full hover:bg-white transition-colors'
+              className='bg-white/90 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-colors shadow-lg'
               aria-label={`View ${project.title} source code`}
             >
               <Github className='w-6 h-6 text-gray-800' />
@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
                 href={project.live} 
                 target='_blank' 
                 rel="noopener noreferrer"
-                className='bg-white/90 p-3 rounded-full hover:bg-white transition-colors'
+                className='bg-white/90 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-colors shadow-lg'
                 aria-label={`View ${project.title} live demo`}
               >
                 <ExternalLink className='w-6 h-6 text-gray-800' />
@@ -40,10 +40,10 @@ const ProjectCard = ({ project }) => {
       </div>
       
       <div className='p-6'>
-        <h3 className='font-bold text-xl mb-3 text-gray-800 hover:text-red-600 transition-colors'>
+        <h3 className='font-bold text-xl mb-3 text-white hover:text-purple-400 transition-colors'>
           {project.title}
         </h3>
-        <p className='text-gray-600 leading-relaxed mb-4 text-sm'>
+        <p className='text-gray-300 leading-relaxed mb-4 text-sm'>
           {project.desc}
         </p>
         
@@ -53,7 +53,7 @@ const ProjectCard = ({ project }) => {
             {project.technologies.map((tech, index) => (
               <span 
                 key={index}
-                className='px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium hover:bg-red-100 hover:text-red-700 transition-colors'
+                className='px-3 py-1 bg-white/10 backdrop-blur-sm text-purple-300 text-xs rounded-full font-medium hover:bg-purple-500/20 hover:text-purple-200 transition-colors border border-white/20'
               >
                 {tech}
               </span>
@@ -68,9 +68,9 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer" 
             className='flex-1'
           >
-            <button className='w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 py-2 rounded-lg hover:from-gray-900 hover:to-black transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2'>
+            <button className='w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2 font-semibold'>
               <Github className='w-4 h-4' />
-              <span className='font-medium'>View Code</span>
+              <span>View Code</span>
             </button>
           </a>
         </div>

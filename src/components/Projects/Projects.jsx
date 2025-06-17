@@ -41,12 +41,14 @@ const Projects = () => {
   ]
   
   return (
-    <section id='projects' className='relative bg-gradient-to-br from-gray-800 to-gray-900 py-16 px-4'>
+    <section id='projects' className='relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 px-4'>
       <div className='mb-16 max-w-7xl mx-auto'>
-        <div className='text-center mb-12'>
-          <h2 className='text-5xl font-bold mb-4 text-white'>My Projects</h2>
-          <div className='w-24 h-1 bg-red-500 mx-auto mb-6'></div>
-          <p className='text-gray-300 text-lg max-w-2xl mx-auto'>
+        <div className='text-center mb-16'>
+          <h2 className='text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent'>
+            My Projects
+          </h2>
+          <div className='w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8'></div>
+          <p className='text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed'>
             A collection of full-stack applications showcasing modern web development practices, 
             cloud deployment, and user-centric design solutions.
           </p>

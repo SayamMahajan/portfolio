@@ -73,20 +73,21 @@ const Certificates = () => {
 
   return (
     <div className="relative" id="certificates">
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
+      <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
         <div className="max-w-7xl mx-auto mb-10 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl mt-3 text-red-600 font-bold uppercase mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
               Certifications
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+            <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
               Professional certifications demonstrating expertise in cloud computing, web development, and software engineering
             </p>
           </div>
           
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
             {/* Certificate Display */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+            <div className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/50">
               <div className="overflow-hidden h-[500px] relative">
                 <div
                   className={`transition-all duration-500 ease-in-out ${isPaused ? "paused" : ""}`}
@@ -105,10 +106,10 @@ const Certificates = () => {
                       {/* Certificate Badge */}
                       {index < 2 && (
                         <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${
-                          index === 0 ? 'bg-orange-100 text-orange-800 border border-orange-300' : 'bg-blue-100 text-blue-800 border border-blue-300'
+                          index === 0 ? 'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-800 border-2 border-orange-300' : 'bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 border-2 border-blue-300'
                         }`}>
-                          <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${
-                            index === 0 ? 'bg-orange-500' : 'bg-blue-500'
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${
+                            index === 0 ? 'bg-gradient-to-r from-orange-500 to-yellow-500' : 'bg-gradient-to-r from-blue-500 to-cyan-500'
                           }`}>
                             <span className="text-white font-bold text-xs">AWS</span>
                           </div>
@@ -124,22 +125,22 @@ const Certificates = () => {
                         <img
                           src={certificate.image}
                           alt={certificate.title}
-                          className="w-full h-auto rounded-lg shadow-lg max-h-[300px] object-contain transition-transform group-hover:scale-105"
+                          className="w-full h-auto rounded-2xl shadow-xl max-h-[300px] object-contain transition-transform group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all rounded-lg"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-all rounded-2xl"></div>
                       </div>
                       
                       {certificate.description && (
-                        <p className="text-gray-600 text-center text-sm leading-relaxed mt-4">
+                        <p className="text-gray-600 text-center text-sm leading-relaxed mt-4 bg-white/50 rounded-2xl p-4">
                           {certificate.description}
                         </p>
                       )}
                       
                       <div className="flex justify-between items-center w-full mt-4 pt-4 border-t border-gray-200">
-                        <span className="text-sm font-semibold text-gray-700">
+                        <span className="text-sm font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">
                           {certificate.issuer}
                         </span>
-                        <span className="text-sm text-gray-500">
+                        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                           {certificate.date}
                         </span>
                       </div>
@@ -152,15 +153,15 @@ const Certificates = () => {
               <div className="flex items-center justify-between mt-8">
                 <button
                   onClick={handlePrev}
-                  className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors shadow-md"
+                  className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 
                 {/* Dots Indicator */}
-                <div className="flex space-x-2">
+                <div className="flex space-x-3">
                   {certificates.map((_, index) => (
                     <button
                       key={index}
@@ -168,9 +169,9 @@ const Certificates = () => {
                         setCurrentIndex(index);
                         pauseScrolling();
                       }}
-                      className={`w-3 h-3 rounded-full transition-all ${
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         index === currentIndex
-                          ? "bg-red-500 scale-125"
+                          ? "bg-gradient-to-r from-purple-500 to-pink-500 scale-125"
                           : "bg-gray-300 hover:bg-gray-400"
                       }`}
                     />
@@ -179,9 +180,9 @@ const Certificates = () => {
                 
                 <button
                   onClick={handleNext}
-                  className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors shadow-md"
+                  className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -190,12 +191,14 @@ const Certificates = () => {
             
             {/* Animation */}
             <div className="flex justify-center">
-              <Suspense fallback={<div className="text-gray-500">Loading Animation...</div>}>
-                <Lottie 
-                  animationData={CertificateAnimation} 
-                  className="w-[400px] lg:w-[500px] max-w-full" 
-                />
-              </Suspense>
+              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50">
+                <Suspense fallback={<div className="text-gray-500 text-center py-20">Loading Animation...</div>}>
+                  <Lottie 
+                    animationData={CertificateAnimation} 
+                    className="w-[400px] lg:w-[500px] max-w-full" 
+                  />
+                </Suspense>
+              </div>
             </div>
           </div>
         </div>
